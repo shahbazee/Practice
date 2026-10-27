@@ -5,7 +5,14 @@
 {% if object_list %}
 <ul>
     {% for payment in object_list %}
-    <li>{{ payment.amount }} {{ payment.currency }} - {{ payment.status }}</li>
+    <li>{{ payment.amount }} {{ payment.currency }} - {{ payment.status }}
+        {% if payment.status == "PENDING" %}
+        <form method="post" action="{% url 'payment-checkout' payment.id %}">
+            {% csrf_token %}
+            <button type="submit">Pay with Stripe</button>
+        </form>
+        {% endif %}
+    </li>
     {% endfor %}
 </ul>
 {% else %}

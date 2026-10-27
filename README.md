@@ -20,6 +20,14 @@ Django test project with a payments app and Google sign-in.
 - `payments`: payment records, login required
 - Google sign-in via django-allauth
 
+## Stripe hosted checkout (test mode)
+- Get test keys from Stripe Dashboard (Developers > API keys)
+- Put them in `.env`
+- Run Stripe CLI listener for webhooks: `stripe listen --forward-to localhost:8000/payments/webhook/stripe/`
+- Put the CLI webhook secret in `.env` as STRIPE_WEBHOOK_SECRET
+- Create a payment, press "Pay with Stripe", use test card 4242 4242 4242 4242
+- Success page is display only, the webhook marks the payment COMPLETED
+
 ## Notes
 - Payments here are records only, no real money moves.
 - `db.sqlite3` and `.env` are not committed.

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Payment Cancelled</h1>
+{% if payment %}
+<p>{{ payment.amount }} {{ payment.currency }} - {{ payment.status }}</p>
+{% else %}
+<p>Payment not found.</p>
+{% endif %}
+<p>No charge was made. You can try again from the payments page.</p>
+<p><a href="/payments/">Back to payments</a></p>
+{% endblock %}

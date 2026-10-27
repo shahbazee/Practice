@@ -17,6 +17,8 @@ is the only app. Google sign-in uses django-allauth.
 - Never commit `.env`. Copy `.env.example` to `.env` and fill
   in real values locally.
 - Never print or paste secret values in chat or commit messages.
+- Stripe webhook signature verification is fail-closed: a bad
+  signature returns 400 and changes nothing.
 
 ## Workflow
 - Run `python manage.py check` before committing.

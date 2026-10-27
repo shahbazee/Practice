@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Payment Successful</h1>
+{% if payment %}
+<p>{{ payment.amount }} {{ payment.currency }} - {{ payment.status }}</p>
+<p>Stripe notifies us separately. If it still shows pending, refresh in a moment.</p>
+{% else %}
+<p>Payment not found.</p>
+{% endif %}
+<p><a href="/payments/">Back to payments</a></p>
+{% endblock %}
