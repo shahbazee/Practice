@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>My Payments</h1>
+<p><a href="/payments/new/">New payment</a></p>
+{% if object_list %}
+<ul>
+    {% for payment in object_list %}
+    <li>{{ payment.amount }} {{ payment.currency }} - {{ payment.status }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No payments yet.</p>
+{% endif %}
+{% endblock %}
