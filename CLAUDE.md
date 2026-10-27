@@ -2,7 +2,8 @@
 
 ## Project
 Django test project. `config` is the project package. `payments`
-is the only app. Google sign-in uses django-allauth.
+handles payment records. `accounts` handles Google sign-in with
+manual OAuth2, plus email login and logout.
 
 ## Code rules
 - PEP 8, maximum 79 characters per line.

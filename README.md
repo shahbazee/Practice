@@ -10,15 +10,17 @@ Django test project with a payments app and Google sign-in.
 - Start the server: `python manage.py runserver`
 
 ## Google sign-in
+- Google sign-in is manual OAuth2, implemented in the accounts app
 - Create OAuth credentials in Google Cloud Console
-- Add this redirect URI: `http://127.0.0.1:8000/accounts/google/login/callback/`
+- Add this redirect URI: `http://127.0.0.1:8000/accounts/google/callback/`
 - Put the client ID and secret in `.env`
 - Open the home page and use "Sign in with Google"
 
 ## What is inside
 - `config`: Django project settings and URLs
+- `accounts`: Google sign-in with manual OAuth2, email login, logout
 - `payments`: payment records, login required
-- Google sign-in via django-allauth
+- Stripe hosted checkout with webhook fulfillment
 
 ## Stripe hosted checkout (test mode)
 - Get test keys from Stripe Dashboard (Developers > API keys)

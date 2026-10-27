@@ -5,7 +5,7 @@ from payments import views as payment_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("accounts/", include("allauth.urls")),
+    path("accounts/", include("accounts.urls")),
     path("", payment_views.home, name="home"),
     path("payments/", include("payments.urls")),
 ]

@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% load socialaccount %}
 {% block content %}
 <h1>Practice Project</h1>
 {% if user.is_authenticated %}
@@ -7,7 +6,7 @@
 <p><a href="/payments/">View your payments</a></p>
 {% else %}
 <p>Please sign in to continue.</p>
-<p><a href="{% provider_login_url 'google' %}">Sign in with Google</a></p>
+<p><a href="{% url 'google-login' %}">Sign in with Google</a></p>
 <p><a href="/accounts/login/">Sign in with email</a></p>
 {% endif %}
 {% endblock %}
